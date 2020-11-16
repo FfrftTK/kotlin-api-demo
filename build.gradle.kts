@@ -22,6 +22,15 @@ dependencies {
 	testImplementation("org.springframework.boot:spring-boot-starter-test") {
 		exclude(group = "org.junit.vintage", module = "junit-vintage-engine")
 	}
+	implementation("org.springframework.boot:spring-boot-starter-web")
+
+	runtimeOnly("org.postgresql:postgresql")
+	implementation("org.springframework.boot:spring-boot-starter-data-jpa")
+}
+
+tasks.bootJar {
+	this.archiveFileName.set("app.${archiveExtension.get()}")
+	mainClassName = "com.example.demo.DemoApplication"
 }
 
 tasks.withType<Test> {
@@ -34,3 +43,6 @@ tasks.withType<KotlinCompile> {
 		jvmTarget = "11"
 	}
 }
+
+//classpath("org.jetbrains.kotlin:kotlin-noarg:${kotlinVersion}")
+//apply plugin: "kotlin-jpa"
