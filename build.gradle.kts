@@ -43,3 +43,6 @@ tasks.withType<KotlinCompile> {
 		jvmTarget = "11"
 	}
 }
+
+//classpath("org.jetbrains.kotlin:kotlin-noarg:${kotlinVersion}")
+//apply plugin: "kotlin-jpa"
